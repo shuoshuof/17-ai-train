@@ -1,4 +1,0 @@
-
-
-train_root = "./train/"
-
