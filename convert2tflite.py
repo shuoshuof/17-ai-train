@@ -94,6 +94,6 @@ def convert_to_tf_lite(model_path,valid_input_size,valid_path=None):
         remark = {'model_path':model_path,'input_size':valid_input_size,'valid_path':valid_path,'acc':acc}
         with open(save_root+"/remark.json",'w',encoding='utf-8') as f:
             json.dump(remark,f)
-convert_to_tf_lite(model_path='./models_save/2023_01_06_23_18_08/model_45_0.9163.h5',
+convert_to_tf_lite(model_path='./models_save/2023_01_08_22_24_03/model_47_0.9163.h5',
                    valid_input_size=input_size,
                    valid_path='./train')
