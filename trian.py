@@ -30,7 +30,7 @@ def Mobilenet_v2(input_size,weights,Dropout_rate,Trainable,alpha = 0.35):
 
 epochs = 100
 input_size=128
-lr =0.0001
+lr =1e-4
 Dropout_rate=0.3
 batch_size =128
 
@@ -71,7 +71,8 @@ save_weights = keras.callbacks.ModelCheckpoint(save_path + "/model_{epoch:02d}_{
 hist = model.fit(train_dataset, 
                  epochs=epochs,
                  validation_data=valid_dataset,
-                  callbacks=[save_weights,early_stop,reduce_lr]
+                  callbacks=[save_weights,early_stop,reduce_lr],
+                  workers =1
                  )
 
 plt.figure()
