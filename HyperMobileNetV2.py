@@ -3,7 +3,8 @@ from tensorflow import keras
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import numpy as np
-
+import time
+import os
 def Mobilenet_v2(input_size,weights,Dropout_rate,Trainable,alpha = 0.35):
     base_model = keras.applications.MobileNetV2(
         input_shape=(input_size, input_size, 3),
@@ -93,14 +94,14 @@ tuner = keras_tuner.BayesianOptimization(
     directory="my_dir",
     project_name="tune_hypermodel",
 )
-tuner.search(epochs=5,workers=8)
+tuner.search(epochs=10,workers=8)
 
 hypermodel = HyperMobilenet_v2(input_size=128,batch_size=128,train_root='./train/')
 best_hp = tuner.get_best_hyperparameters()[0]
 model = hypermodel.build(best_hp)
 save_path = './models_save/%s' % (time.strftime('%Y_%m_%d_%H_%M_%S'))
 reduce_lr = keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.2,patience=10,verbose=1)
-early_stop =keras.callbacks.EarlyStopping(monitor='val_accuracy', patience=10,verbose=1)
+early_stop =keras.callbacks.EarlyStopping(monitor='val_accuracy', patience=15,verbose=1)
 save_weights = keras.callbacks.ModelCheckpoint(save_path + "/model_{epoch:02d}_{val_accuracy:.4f}.h5",
                                                    save_best_only=True, monitor='val_accuracy')
 
