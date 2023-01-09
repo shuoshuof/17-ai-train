@@ -1,5 +1,4 @@
 /train
-/加框后的JPEG图
 /my_dir/
 *.h5
 *.tflite
