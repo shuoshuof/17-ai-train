@@ -1,5 +1,5 @@
 /train
 /my_dir/
-*.h5
-*.tflite
-*.json
+# *.h5
+# *.tflite
+# *.json
