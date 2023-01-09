@@ -6,7 +6,8 @@
 + 数据增强
 + 目标检测  
 
-如果你习惯使用jupyter notebook编写代码，这里也提供了jupyter版本的代码。在目录下的example.ipynb，有所有内容的完整代码。
+如果你习惯使用jupyter notebook编写代码，这里也提供了jupyter版本的代码。在目录下的example.ipynb，有所有内容的完整代码。  
+这部分的代码已上传到我的[GitHub仓库](https://github.com/shuoshuof/17-ai-train)。      
 
 # 
 模型的精度在比赛中非常关键，毕竟分类错误的罚时是非常狠的。  
