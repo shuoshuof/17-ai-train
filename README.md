@@ -3,8 +3,9 @@
 + [训练](./文档/%E8%AE%AD%E7%BB%83.md)
 + [量化](./文档/%E9%87%8F%E5%8C%96.md)
 + [超模型](./文档/%E8%B6%85%E6%A8%A1%E5%9E%8B.md)
++ [目标检测](https://github.com/shuoshuof/object-locating)  
 + 数据增强
-+ 目标检测  
+
 
 如果你习惯使用jupyter notebook编写代码，这里也提供了jupyter版本的代码。在目录下的example.ipynb，有所有内容的完整代码。  
 这部分的代码已上传到我的[GitHub仓库](https://github.com/shuoshuof/17-ai-train)。      
